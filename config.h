@@ -56,7 +56,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* cmd variables */
-static const char dmenuline[] = "7";
+static const char dmenuline[] = "2";
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 
 /* commands */
