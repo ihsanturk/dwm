@@ -7,8 +7,12 @@ VERSION = 6.2
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
 
-X11INC = /usr/include/X11
-X11LIB = /usr/lib/X11
+#X11INC = /usr/local/include/X11
+#X11LIB = /usr/local/lib/X11
+
+# Freebsd (uncomment)
+X11INC = /usr/local/include
+X11LIB = /usr/local/lib
 
 # Xinerama, comment if you don't want it
 XINERAMALIBS  = -lXinerama
@@ -16,9 +20,11 @@ XINERAMAFLAGS = -DXINERAMA
 
 # freetype
 FREETYPELIBS = -lfontconfig -lXft
-FREETYPEINC = /usr/include/freetype2
+# FREETYPEINC = /usr/include/freetype2
 # OpenBSD (uncomment)
-#FREETYPEINC = ${X11INC}/freetype2
+# FREETYPEINC = ${X11INC}/freetype2
+# FreeBSD (uncomment)
+FREETYPEINC = ${PREFIX}/include/freetype2
 
 # includes and libs
 INCS = -I${X11INC} -I${FREETYPEINC}
@@ -31,8 +37,8 @@ CFLAGS   = -std=c99 -pedantic -Wall -Wno-deprecated-declarations -Os ${INCS} ${C
 LDFLAGS  = ${LIBS}
 
 # Solaris
-#CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
-#LDFLAGS = ${LIBS}
+# CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
+# LDFLAGS = ${LIBS}
 
 # compiler and linker
 CC = cc
