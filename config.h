@@ -3,7 +3,7 @@
 /* appearance */
 static const unsigned int borderpx = 4;        /* border pixel of windows */
 static const unsigned int snap     = 16;       /* snap pixel */
-static const int showbar           = 0;        /* 0 means no bar */
+static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
 
 static const char *fonts[]         = { "IBM Plex Mono:pixelsize=13:antialias=true:hinting=true" };
@@ -11,7 +11,7 @@ static const char dmenufont[]      = "IBM Plex Mono:pixelsize=13:antialias=true:
 
 static const char col_gray1[]      = "#18222b";
 static const char col_gray2[]      = "#20242d";
-static const char col_gray3[]      = "#777777";
+static const char col_gray3[]      = "#555555";
 static const char col_gray4[]      = "#aaaaaa";
 static const char col_cyan[]       = "#20242d";
 
