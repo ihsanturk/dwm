@@ -9,11 +9,11 @@ static const int topbar            = 1;        /* 0 means bottom bar */
 static const char *fonts[]         = { "IBM Plex Mono:pixelsize=13:antialias=true:hinting=true" };
 static const char dmenufont[]      = "IBM Plex Mono:pixelsize=13:antialias=true:hinting=true";
 
-static const char col_1[] = "#33302b"; /* D bar back */
+static const char col_1[] = "#414141"; /* D bar back */
 static const char col_3[] = "#666666"; /* D bar fore */
 static const char col_4[] = "#aaaaaa"; /* A bar fore */
 static const char col_2[] = "#222222"; /* D border   */
-static const char col_5[] = "#545449"; /* A border   */
+static const char col_5[] = "#544445"; /* A border   */
 
 static const char *colors[][3]     = {
   /*               fg     bg     border   */
@@ -22,7 +22,13 @@ static const char *colors[][3]     = {
 };
 
 static const Rule rules[] = {
-
+	/* xprop(1):
+	 *	WM_CLASS(STRING) = instance, class
+	 *	WM_NAME(STRING) = title
+	 */
+	/* class      instance    title       tags mask     isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* tagging */
