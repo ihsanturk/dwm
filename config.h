@@ -1,25 +1,25 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 7;        /* border pixel of windows */
+static const unsigned int borderpx = 6;        /* border pixel of windows */
 static const unsigned int snap     = 16;       /* snap pixel */
 static const int showbar           = 1;        /* 0 means no bar */
 static const int topbar            = 1;        /* 0 means bottom bar */
-
 static const char *fonts[]         = { "IBM Plex Mono:pixelsize=13:antialias=true:hinting=true" };
 static const char dmenufont[]      = "IBM Plex Mono:pixelsize=13:antialias=true:hinting=true";
-
-static const char col_1[] = "#414141"; /* D bar back */
-static const char col_3[] = "#666666"; /* D bar fore */
-static const char col_4[] = "#aaaaaa"; /* A bar fore */
-static const char col_2[] = "#222222"; /* D border   */
-static const char col_5[] = "#544445"; /* A border   */
-
-static const char *colors[][3]     = {
-  /*               fg     bg     border   */
-  [SchemeNorm] = { col_3, col_1, col_2 },
-  [SchemeSel]  = { col_4, col_5, col_5 },
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#282828";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+static const char *colors[][3]      = {
+	/*               fg         bg         border   */
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
+
+/* tagging */
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -30,9 +30,6 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
-
-/* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -67,10 +64,10 @@ static const char *dmenucmd[] = { "dmenu_run",
                                     "-l", dmenuline,
                                     "-m", dmenumon,
                                     "-fn", dmenufont,
-                                    "-nb", col_1,
-                                    "-nf", col_3,
-                                    "-sb", col_5,
-                                    "-sf", col_4, NULL
+                                    "-nb", col_gray1,
+                                    "-nf", col_gray3,
+                                    "-sb", col_cyan,
+                                    "-sf", col_gray4, NULL
                                 };
 static const char *termcmd[] = { "st", NULL };
 
